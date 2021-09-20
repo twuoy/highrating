@@ -1,0 +1,13 @@
+{
+  "name": "ani-movie-highrating",
+  "version": "1.0.0",
+  "description": "View the anime, movie and TV show rating by highlighting the title on a web page.",
+  "license": "MIT",
+  "dependencies": {
+    "@types/chrome": "^0.0.129"
+  },
+  "devDependencies": {
+    "@types/core-js": "^2.5.4",
+    "typescript": "^4.1.3"
+  }
+}

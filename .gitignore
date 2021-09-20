@@ -1,0 +1,8 @@
+# system
+src/dist
+*.log
+
+# misc
+.vscode
+.DS_Store
+node_modules

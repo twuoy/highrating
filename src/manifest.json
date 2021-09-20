@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Ani Movie Highrating",
+    "version": "0.1.0",
+    "description": "Search the rating of anime, movies and TV shows by highlighting the video title on a web page.",
+    "minimum_chrome_version": "93",
+    "background": {
+        "service_worker": "dist/background.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "64": "images/icon64.png",
+            "256": "images/icon256.png"
+        }
+    },
+    "permissions": [
+        "activeTab",
+        "contextMenus",
+        "storage"
+    ],
+    "icons": {
+        "64": "images/icon64.png",
+        "256": "images/icon256.png"
+    }
+}

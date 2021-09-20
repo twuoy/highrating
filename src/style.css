@@ -1,0 +1,132 @@
+body {
+    border-radius: 5px;
+    padding: 0;
+    box-sizing: border-box;
+    margin:0px !important;
+}
+
+main {
+    font-family: 'Ubuntu', sans-serif;
+    height:auto;
+    width: auto;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem; 
+    padding-bottom: 2rem; 
+}
+
+h1 {
+    color: #426696;
+    font-weight: 600;
+    font-size: 2rem;
+    opacity: 0.7;
+}
+
+h3,
+p {
+    color: #426696;
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.search input {
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+.title {
+    align-items: center;
+    margin-bottom: 0rem;
+}
+
+.input {
+    margin-bottom: 3.5rem;
+}
+
+.search input {
+    color: darkslategray;
+    font-weight: 600;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.input input {
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.btn {
+    display: flex;
+}
+
+.btn input {
+    background: linear-gradient(to right bottom, rgb(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+    border: none;
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.glass {
+    /* background: white; */
+    min-height: 80vh;
+    width: 60%;
+    z-index: 2;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.2));
+    border-radius: 2rem;
+    backdrop-filter: blur(1rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 6.0px );
+    -webkit-backdrop-filter: blur( 6.0px );
+    border-radius: 10px;
+}
+
+.circle_left, .circle_right {
+    height: 6rem;
+    width: 6rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle_left {
+    background: linear-gradient(to right top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)); 
+    bottom: 3%;
+    left: 1%;
+    z-index: 3;
+}
+
+.circle_right {
+    z-index: 1;
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)); 
+    top: 2%;
+    right: 3%;
+}

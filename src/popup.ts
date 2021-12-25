@@ -1,32 +1,30 @@
-import { RatingSiteURL } from './contanst.js';
+import { RatingSiteURL, SEARCH_BTN_AND_SITE_MAP } from './contanst.js';
 
 function searchVideoRating(url: RatingSiteURL): void {
   const { value: videoName } = (<HTMLInputElement>document.getElementById('movie_name_input')); 
   chrome.tabs.create({url: `${url}?q=${videoName}`});
 }
 
-function syncInputFromStorage(): void {
-  chrome.storage.sync.get('videoName', (data) => {
-    const { videoName } = data;
-    document.getElementById('movie_name_input').setAttribute('value', videoName);
+function syncInputWithStorage(): void {
+  chrome.storage.sync.get('videoName', ({ videoName }) => {
+    document.getElementById('movie_name_input').setAttribute('value', videoName)
   });
 }
 
-function syncStorageFromInput(): void {
-  const videoName = this.value;
-  chrome.storage.sync.set({ videoName }, function() {
-    console.log('The videoName is set to ' + videoName);
+function syncStorageWithInput(): void {
+  const videoName: string = this.value;
+  chrome.storage.sync.set({ videoName }, () => {
+    console.log(`The videoName in storage is set to ${videoName}`)
   });
 }
 
 try {
-  document.addEventListener('DOMContentLoaded', () => syncInputFromStorage());
+  document.addEventListener('DOMContentLoaded', () => syncInputWithStorage());
+  document.getElementById("movie_name_input").addEventListener('blur', () => syncStorageWithInput());
 
-  document.getElementById('google_search_btn').addEventListener('click', () => searchVideoRating(RatingSiteURL.GOOGLE));
-  document.getElementById('douban_search_btn').addEventListener('click', () => searchVideoRating(RatingSiteURL.DOUBAN));
-  document.getElementById('imdb_search_btn').addEventListener('click', () => searchVideoRating(RatingSiteURL.IMDB));
-
-  document.getElementById("movie_name_input").addEventListener('blur', () => syncStorageFromInput());
+  for (const [btnName, siteURL] of Object.entries(SEARCH_BTN_AND_SITE_MAP)) {
+    document.getElementById(btnName).addEventListener('click', () => searchVideoRating(siteURL));
+}
 
 } catch (e) {
   console.error(`popup page exception: ${e}`);
